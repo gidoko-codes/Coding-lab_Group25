@@ -4,7 +4,7 @@ secure_data(){
 		echo "ERROR: active-logs not found"
 		return 1
 	fi
-	chmod 600 active-logs
+	chmod 700 active-logs
 	echo "active_logs is now secured"
 	ls -ld active_logs
 }
