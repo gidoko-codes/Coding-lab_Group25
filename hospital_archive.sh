@@ -2,6 +2,7 @@
 
 archive_logs() {
     echo "Starting log archive process..."
+    echo "Here you will see the list of archived files."
 
     mkdir -p active_logs archived_logs
 
