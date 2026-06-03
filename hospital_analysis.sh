@@ -15,5 +15,6 @@ water_audit() {
     }
     ' active_logs/water_usage_log.log
 }
+echo "Running Facility Auditor water usage audit..."
 
 water_audit
