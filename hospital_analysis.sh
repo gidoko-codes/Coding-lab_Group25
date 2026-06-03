@@ -1,11 +1,19 @@
 #!/bin/bash
 
-process_vitals() {
-    echo "Processing critical alerts..."
-
-    grep "CRITICAL" active_logs/heart_rate.log active_logs/temperature.log 2>/dev/null | awk -F',' "{print \$1 \",\" \$2 \",\" \$3}" > reports/critical_alerts.txt
-
-    echo "Critical alerts saved to reports/critical_alerts.txt"
+water_audit() {
+    awk -F'|' '
+    /ICU_WATER_RESERVE/ {
+        sum += $3
+        count++
+    }
+    END {
+        if (count > 0) {
+            printf "ICU Water Reserve Average Usage: %.2f Liters/min\n", sum/count
+        } else {
+            printf "No ICU Water Reserve data found.\n"
+        }
+    }
+    ' active_logs/water_usage_log.log
 }
 
-process_vitals
+water_audit
