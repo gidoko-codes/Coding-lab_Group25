@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 archive_logs() {
     echo "Starting log archive process..."
     echo "Here you will see the list of archived files."
