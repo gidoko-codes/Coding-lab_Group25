@@ -40,7 +40,7 @@ i	# Apply strict permissions: only the owner can read, write, and execute.
 }
 secure_data
 
-# Member 3: Orchestrator
+
 # This script runs the full hospital admin workflow in order
 
 # Call Member 1 function (system setup)
@@ -50,4 +50,15 @@ initialize_system
 secure_data
 
 # Print final system status with timestamp
+echo "System Environment Secured - $(date)"
+
+#!/bin/bash
+
+# Run the system setup function
+initialize_system
+
+# Secure the active_logs directory
+secure_data
+
+# Display confirmation with current date and time
 echo "System Environment Secured - $(date)"
