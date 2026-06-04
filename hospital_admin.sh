@@ -1,5 +1,5 @@
-#!/bin/bash
-
+#/bin/bash
+Initialize_system(){
 # Check whether the active_logs directory exists
 if [ ! -d "active_logs" ]; then
     echo "Creating active_logs directory"
@@ -23,3 +23,5 @@ if [ ! -d "reports" ]; then
 else
     echo "The reports directory already exists."
 fi
+}
+Initialize_system
