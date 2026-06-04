@@ -40,8 +40,6 @@ i	# Apply strict permissions: only the owner can read, write, and execute.
 }
 secure_data
 
-# Member 3: Orchestrator
-# This script runs the full hospital admin workflow in order
 
 # Call Member 1 function (system setup)
 initialize_system
