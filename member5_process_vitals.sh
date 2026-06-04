@@ -15,3 +15,4 @@ process_vitals() {
     awk -F' \\| ' '{printf "Timestamp: %s | Device_ID: %s | Value: %s\n", $1, $2, $3}' \
     >> "$report_file"
 }
+process_vitals
